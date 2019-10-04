@@ -24,6 +24,7 @@ class ListItem extends Component {
     actionItem: PropTypes.node,
     leadingActionItem: PropTypes.node,
     textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    textProps: PropTypes.object,
     secondaryTextStyle: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.array,
@@ -44,6 +45,7 @@ class ListItem extends Component {
       disabled,
       textStyle,
       secondaryTextStyle,
+      textProps,
     } = this.props;
 
     return (
@@ -54,7 +56,8 @@ class ListItem extends Component {
             { color: disabled ? 'rgba(0,0,0,0.47)' : 'rgba(0,0,0,0.87)' },
             textStyle,
           ]}
-          numberOfLines={1}>
+          numberOfLines={1}
+          {...textProps}>
           {text}
         </BodyText>
         {typeof secondaryText === 'string' ? (
