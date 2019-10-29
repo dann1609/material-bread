@@ -129,7 +129,6 @@ export class Fab extends Component {
       containerStyle,
       ...props
     } = this.props;
-    const { scale } = this.state;
 
     let backgroundColorApplied = backgroundColor
       ? backgroundColor
@@ -145,9 +144,7 @@ export class Fab extends Component {
     }
 
     return (
-      <Animated.View
-        style={[{ transform: [{ scale: scale }], zIndex: 100 }, containerStyle]}
-        testID={testID}>
+      <Animated.View style={[{ zIndex: 100 }, containerStyle]} testID={testID}>
         <Ripple
           onPress={onPress}
           disabled={disabled}
