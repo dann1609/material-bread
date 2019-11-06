@@ -24,6 +24,11 @@ const styles = StyleSheet.create({
     elevation: Platform.OS === 'android' ? 10 : 0,
     transform: [{ translateY: -29 }],
   },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: '#000',
+    opacity: 0.4,
+  },
   centerCut: {
     position: 'absolute',
     zIndex: 10,
