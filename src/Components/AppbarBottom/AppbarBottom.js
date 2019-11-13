@@ -56,7 +56,10 @@ class AppbarBottom extends Component {
 
   _renderFab() {
     const { fab, fabPosition, fabCutout } = this.props;
+
     if (!fab) return null;
+
+    const { onPress } = fab.props
 
     const fabRightStyle = {
       right: fabCutout ? 18 : 16,
@@ -69,7 +72,7 @@ class AppbarBottom extends Component {
     return React.cloneElement(fab, {
       shadow: fabCutout ? 8 : 6,
       style: [styles.fabPos, fabPosStyles],
-      onPress: this._setMaskVisible,
+      onPress: onPress? onPress: this._setMaskVisible,
       ref: this.fab,
     });
   }
