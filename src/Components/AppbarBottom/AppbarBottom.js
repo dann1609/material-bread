@@ -59,7 +59,7 @@ class AppbarBottom extends Component {
 
     if (!fab) return null;
 
-    const { onPress } = fab.props
+    const { onPress } = fab.props;
 
     const fabRightStyle = {
       right: fabCutout ? 18 : 16,
@@ -72,7 +72,7 @@ class AppbarBottom extends Component {
     return React.cloneElement(fab, {
       shadow: fabCutout ? 8 : 6,
       style: [styles.fabPos, fabPosStyles],
-      onPress: onPress? onPress: this._setMaskVisible,
+      onPress: onPress ? onPress : this._setMaskVisible,
       ref: this.fab,
     });
   }
@@ -166,7 +166,7 @@ class AppbarBottom extends Component {
       <>
         {maskVisible && (
           <TouchableWithoutFeedback onPress={this.onOverlayPressed}>
-            <View style={styles.overlay}></View>
+            <View style={styles.overlay} />
           </TouchableWithoutFeedback>
         )}
 
